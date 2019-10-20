@@ -1,0 +1,181 @@
+<html>
+<head>
+<style>
+	body
+{
+ text-align:center;
+ width:100%;
+ margin:10px;
+ padding:10px;
+ font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+ background-color:black;
+}
+
+#wrapper
+{
+ margin:0 auto;
+ padding:0px;
+ text-align:center;
+ width:980px;
+}
+#wrapper div
+{
+ float:left;
+ font-family: helvetica, arial, sans-serif;
+}
+#wrapper #div1
+{
+ margin-top:30px;
+ width:590px;
+ text-align:left;
+}
+#wrapper #div1 p
+{
+ font-size:20px;
+ font-family:arial;
+ font-weight:bold;
+ margin:0px;
+ color:#0e385f;
+}
+#wrapper #div2
+{
+ margin-top:10px;
+ width:390px;
+ text-align:left;
+}
+#wrapper #div2 h1
+{
+ margin:0px;
+ font-size:37px;
+ color:#2E2E2E;
+}
+#wrapper #div2 p
+{
+ font-size:18px;
+ color:#2E2E2E;
+}
+#wrapper #div2 li
+{
+ list-style-type:none;
+ margin-top:10px;
+}
+#wrapper #div2 li #firstname
+{
+ width:49%;
+}
+#wrapper #div2 li #surname
+{
+ margin-left:2%;
+ width:49%;
+}
+#wrapper #div2 li input[type="text"]
+{
+ width:100%;
+ height:40px;
+ border-radius:5px;
+ padding-left:10px;
+ font-size:18px;
+ border:1px solid #BDBDBD;
+}
+#wrapper #div2 li input[type="password"]
+{
+ width:100%;
+ height:40px;
+ border-radius:5px;
+ padding-left:10px;
+ font-size:18px;
+ border:1px solid #BDBDBD;
+}
+
+
+#wrapper #div2 li
+{
+ color:#2E2E2E;
+ font-size:18px;
+}
+#wrapper #div2 li input[type="submit"]
+{
+ width:200px;
+ height:45px;
+ text-align:center;
+ font-size:19px;
+ margin-top: 10px;
+
+ margin-bottom: 10px;
+ font-family: 'Freight Sans Bold', helvetica, arial, sans-serif;
+ font-weight: bold;
+ background-color: #69a74e;
+ border-color: #3b6e22 #3b6e22 #2c5115;
+ border: 1px solid;
+ border-radius: 5px;
+ color: #fff;
+ cursor: pointer;
+ display: inline-block;
+
+}
+
+
+</style>
+
+</head>
+<body>
+
+<center><img src="avg5.png" width="200px" height="100px"></center>
+
+<div id="wrapper">
+
+<div id="div1">
+<img src="avg2.jpg" height="500px" width="500px">
+</div>
+
+<div id="div2">
+<h1 style="color:white">Create an account</h1>
+<p style="color:white" >It's free and always will be.</p>
+<form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >
+<li><input type="text" name="fname" placeholder="First Name" id="firstname"><input type="text" name="lname"  placeholder="Surname" id="surname"></li>
+<li><input type="text" name="email" placeholder="emailaddress"></li>
+<li><input type="password"name="pass" placeholder="password"></li>
+<li><input type="password" name="passw" placeholder="re-enter password"></li>
+<li><input type="submit" value="Create an account"> "><a href="login.html" target="_blank">Already have an account</a></li>
+</form>
+
+</div>
+
+</div>
+</body>
+<script>  
+function validateform(){  
+var name=document.myform.fname.value; 
+var lpname=document.myform.lname.value; 
+  
+if (name==null || name==""||lpname==null||lpname==""){  
+  alert("Name can't be blank");  
+  return false;  
+}
+  var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;  
+  }  
+  var password=document.myform.pass.value;  
+  if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }
+
+  var firstpassword=document.myform.pass.value;  
+var secondpassword=document.myform.passw.value;  
+  
+if(firstpassword==secondpassword){  
+return true;  
+}  
+else{  
+alert("password must be same!");  
+return false;  
+}    
+
+}  
+</script>  
+</html>
